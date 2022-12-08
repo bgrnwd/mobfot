@@ -52,7 +52,7 @@ body:
     id: version
     attributes:
       label: Version
-      description: What version of pymob are you using?
+      description: What version of mobfot are you using?
       options:
         - 1.0.0
     validations:

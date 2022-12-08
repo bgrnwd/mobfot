@@ -8,7 +8,7 @@ from cachecontrol import CacheControl
 VERSION = "1.0.0"
 
 
-class PyMob:
+class MobFot:
     BASE_URL = "https://www.fotmob.com/api"
     LOGGER = getLogger(__name__)
 

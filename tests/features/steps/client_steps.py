@@ -1,12 +1,13 @@
-from behave import given, then, when
-from re import Match
 import json
 from pathlib import Path
+from re import Match
+
+from behave import given, then, when
 
 
-@given("there is a PyMob client")
+@given("there is a MobFot client")
 def client(context):
-    assert context.pymob is not None
+    assert context.mobfot is not None
 
 
 @when('the "{func_name}" function is called')
@@ -16,7 +17,7 @@ def called(context, func_name):
 
 @then('the "{attr_name}" attribute equals "{value}"')
 def attribute(context, attr_name, value):
-    attr = getattr(context.pymob, attr_name)
+    attr = getattr(context.mobfot, attr_name)
     assert attr == value
 
 
@@ -45,7 +46,7 @@ def response(context):
 
 @when('the "{func_name}" function is called with the following date "{date}"')
 def check_date(context, func_name, date):
-    func = getattr(context.pymob, func_name)
+    func = getattr(context.mobfot, func_name)
     context.date = func(date)
 
 

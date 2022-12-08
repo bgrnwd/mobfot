@@ -1,5 +1,5 @@
-from pymob import PyMob
+from mobfot import MobFot
 
 
 def before_all(context):
-    context.pymob = PyMob()
+    context.mobfot = MobFot()

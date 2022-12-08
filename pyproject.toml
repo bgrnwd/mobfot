@@ -6,7 +6,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pymob"
+name = "mobfot"
 description = "A Python wrapper around the unofficial FotMob API"
 license = { text = "MIT" }
 requires-python = ">=3.7"
@@ -51,7 +51,7 @@ test = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/bgrnwd/pymob"
+Homepage = "https://github.com/bgrnwd/mobfot"
 
 [tool.isort]
 atomic = true
@@ -59,7 +59,7 @@ line_length = 88
 skip_gitignore = true
 
 [tool.setuptools.dynamic]
-version = {attr = "pymob.client.VERSION"}
+version = {attr = "mobfot.client.VERSION"}
 readme = {file = ["README.md"]}
 
 [[tool.mypy.overrides]]

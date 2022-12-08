@@ -46,7 +46,6 @@ test = [
     "mypy",
     "isort",
     "behave",
-    "responses",
     "reformat-gherkin",
     "types-requests"
 ]

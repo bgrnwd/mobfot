@@ -51,11 +51,10 @@ test = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/psf/black"
+Homepage = "https://github.com/bgrnwd/pymob"
 
 [tool.isort]
 atomic = true
-profile = "black"
 line_length = 88
 skip_gitignore = true
 

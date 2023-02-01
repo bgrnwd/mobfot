@@ -3,7 +3,7 @@
 [![license](https://img.shields.io/github/license/bgrnwd/mobfot.svg)](LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 ![pypi](https://img.shields.io/pypi/v/mobfot?color=green)
-[![PyPI download week](https://img.shields.io/pypi/dw/mobfot.svg)](https://pypi.python.org/pypi/mobfot/)
+[![PyPI download month](https://img.shields.io/pypi/dm/mobfot.svg)](https://pypi.python.org/pypi/mobfot/)
 ![Python CI](https://github.com/bgrnwd/mobfot/workflows/Python%20CI/badge.svg)
 
 A Python wrapper around the unofficial [FotMob](https://www.fotmob.com/) API

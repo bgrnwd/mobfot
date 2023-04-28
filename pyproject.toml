@@ -36,7 +36,7 @@ classifiers = [
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-  "requests==2.28.1",
+  "requests==2.29.0",
   "CacheControl==0.12.11"
 ]
 dynamic = ["version"]

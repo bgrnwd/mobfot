@@ -1,11 +1,11 @@
 import re
 from logging import getLevelName, getLogger
 from typing import Optional, Union
-
+import urllib.parse
 import requests
 from cachecontrol import CacheControl
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 
 class MobFot:
@@ -38,7 +38,9 @@ class MobFot:
         self.teams_url = f"{self.BASE_URL}/teams?"
         self.player_url = f"{self.BASE_URL}/playerData?"
         self.match_details_url = f"{self.BASE_URL}/matchDetails?"
-        self.search_url = f"{self.BASE_URL}/searchapi/"
+        self.search_url = f"{self.BASE_URL}/searchData?"
+        self.tv_listing_url = f"{self.BASE_URL}/tvlisting?"
+        self.tv_listings_url = f"{self.BASE_URL}/tvlistings?"
 
     def _check_date(self, date: str) -> Union[re.Match, None]:
         pattern = re.compile(r"(20\d{2})(\d{2})(\d{2})")
@@ -82,4 +84,17 @@ class MobFot:
 
     def get_match_details(self, match_id: int):
         url = f"{self.match_details_url}matchId={match_id}"
+        return self._execute_query(url)
+
+    def get_match_tv_listing(self, match_id: int, country_code: str = "GB"):
+        url = f"{self.tv_listing_url}matchId={match_id}&countryCode={country_code}"
+        return self._execute_query(url)
+
+    def get_tv_listings_country(self, country_code: str = "GB"):
+        url = f"{self.tv_listings_url}countryCode={country_code}"
+        return self._execute_query(url)
+
+    def search(self, term: str, user_language: str = "en-GB,en"):
+        searchterm = urllib.parse.quote_plus(term)
+        url = f"{self.search_url}term={searchterm}&userLanguage={user_language}"
         return self._execute_query(url)

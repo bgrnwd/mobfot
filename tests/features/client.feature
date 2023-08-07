@@ -9,7 +9,9 @@ Feature: Client usage
     And the "teams_url" attribute equals "https://www.fotmob.com/api/teams?"
     And the "player_url" attribute equals "https://www.fotmob.com/api/playerData?"
     And the "match_details_url" attribute equals "https://www.fotmob.com/api/matchDetails?"
-    And the "search_url" attribute equals "https://www.fotmob.com/api/searchapi/"
+    And the "search_url" attribute equals "https://www.fotmob.com/api/searchData?"
+    And the "tv_listing_url" attribute equals "https://www.fotmob.com/api/tvlisting?"
+    And the "tv_listings_url" attribute equals "https://www.fotmob.com/api/tvlistings?"
 
   Scenario: get_matches_by_date
     Given there is a MobFot client
@@ -45,3 +47,20 @@ Feature: Client usage
     Given there is a MobFot client
     When the "_check_date" function is called with the following date "2022-12-05"
     Then the function returns None
+
+
+  Scenario: get_match_tv_listing
+    Given there is a MobFot client
+    When the "get_match_tv_listing" function is called with parameters "4185410"
+    Then there is a response
+
+  Scenario: get_tv_listings_country
+    Given there is a MobFot client
+    When the "get_tv_listings_country" function is called with parameters "GB"
+    Then there is a response
+
+  Scenario: search
+    Given there is a MobFot client
+    When the "search" function is called with parameters "neymar"
+    Then there is a response
+  

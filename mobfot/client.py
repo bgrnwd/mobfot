@@ -53,7 +53,9 @@ class MobFot:
         self.LOGGER.debug(response)
         return response.json()
 
-    def get_matches_by_date(self, date: str, time_zone: str = "America/New_York") -> dict:
+    def get_matches_by_date(
+        self, date: str, time_zone: str = "America/New_York"
+    ) -> dict:
         if self._check_date(date) != None:
             url = f"{self.matches_url}date={date}&timezone={time_zone}"
             return self._execute_query(url)

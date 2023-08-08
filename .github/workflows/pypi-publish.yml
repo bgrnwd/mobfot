@@ -24,5 +24,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install setuptools wheel build
           python -m build
-      - name: Publish a Python distribution to PyPI
+      - name: Publish a Python distribution to PyPi
         uses: pypa/gh-action-pypi-publish@release/v1

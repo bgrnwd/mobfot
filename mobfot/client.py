@@ -1,7 +1,8 @@
 import re
+import urllib.parse
 from logging import getLevelName, getLogger
 from typing import Optional, Union
-import urllib.parse
+
 import requests
 from cachecontrol import CacheControl
 

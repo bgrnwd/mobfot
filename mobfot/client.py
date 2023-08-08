@@ -52,9 +52,9 @@ class MobFot:
         self.LOGGER.debug(response)
         return response.json()
 
-    def get_matches_by_date(self, date: str) -> dict:
+    def get_matches_by_date(self, date: str, time_zone: str = "America/New_York") -> dict:
         if self._check_date(date) != None:
-            url = f"{self.matches_url}date={date}"
+            url = f"{self.matches_url}date={date}&timezone={time_zone}"
             return self._execute_query(url)
         return {}
 
@@ -65,7 +65,7 @@ class MobFot:
         type: str = "league",
         time_zone: str = "America/New_York",
     ):
-        url = f"{self.leagues_url}id={id}&tab={tab}&type={type}&timeZone={time_zone}"
+        url = f"{self.leagues_url}id={id}&tab={tab}&type={type}&timezone={time_zone}"
         return self._execute_query(url)
 
     def get_team(
@@ -75,7 +75,7 @@ class MobFot:
         type: str = "league",
         time_zone: str = "America/New_York",
     ):
-        url = f"{self.teams_url}id={id}&tab={tab}&type={type}&timeZone={time_zone}"
+        url = f"{self.teams_url}id={id}&tab={tab}&type={type}&timezone={time_zone}"
         return self._execute_query(url)
 
     def get_player(self, id: int):

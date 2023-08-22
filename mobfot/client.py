@@ -6,7 +6,7 @@ from typing import Optional, Union
 import requests
 from cachecontrol import CacheControl
 
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 
 
 class MobFot:

@@ -25,7 +25,7 @@ jobs:
       - name: Linting
         run: |
           mypy mobfot
-          isort --check mobfot
+          ruff check mobfot
           black --check mobfot
       - name: Behave tests
         run: |

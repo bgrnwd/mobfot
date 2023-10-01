@@ -1,4 +1,6 @@
-site_name: Mobfot
+site_name: MobFot
+repo_url: https://github.com/bgrnwd/mobfot
+repo_name: MobFot
 theme:
   name: "material"
   icon:

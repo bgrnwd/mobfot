@@ -1,4 +1,4 @@
-# Mobfot
+# MobFot
 
 An unofficial Python client for the [FotMob](https://www.fotmob.com/) API
 

@@ -82,7 +82,7 @@ class MobFot:
         return response.json()
 
     def get_matches_by_date(
-            self, date: str, time_zone: str = "America/New_York"
+        self, date: str, time_zone: str = "America/New_York"
     ) -> dict:
         """Gets all the matches for a given date
 

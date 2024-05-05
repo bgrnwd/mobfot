@@ -59,7 +59,7 @@ class MobFot:
         """Makes sure the season is formatted correctly 20WX-20YZ
 
         Args:
-            season (str): The date (20WX/20YZ)
+            season (str): The season (20WX/20YZ)
 
         Returns:
             Union[re.Match, None]:

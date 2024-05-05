@@ -117,7 +117,7 @@ class MobFot:
         Returns:
             dict: The response from the API
         """
-        if self._check_season(season) is not None:
+        if season == "" or self._check_season(season) is not None:
             url = f"{self.leagues_url}id={id}&tab={tab}&type={type}&timezone={time_zone}&season={season}"
             return self._execute_query(url)
         return {}

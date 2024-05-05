@@ -62,7 +62,7 @@ class MobFot:
             season (str): The date (20WX/20YZ)
 
         Returns:
-            Union[re.Season, None]:
+            Union[re.Match, None]:
         """
         pattern = re.compile(r"(20\d{2})/(20\d{2})")
         return pattern.match(season)
@@ -113,7 +113,7 @@ class MobFot:
             tab (str, optional): What tab of information to get. Defaults to "overview".
             type (str, optional): Defaults to "league".
             time_zone (str, optional): The time zone. Defaults to "America/New_York".
-            season (str, optional): The season we want, the format must be `20WX/20YZ`
+            season (str, optional): The season we want, the format must be `20WX/20YZ`. Defaults to "" (it will show current season)
         Returns:
             dict: The response from the API
         """

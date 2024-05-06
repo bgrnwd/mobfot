@@ -104,7 +104,7 @@ class MobFot:
         tab: str = "overview",
         type: str = "league",
         time_zone: str = "America/New_York",
-        season: str = ""
+        season: str = "",
     ) -> dict:
         """Gets information about a given league
 

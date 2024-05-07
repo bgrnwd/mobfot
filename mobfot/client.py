@@ -55,6 +55,18 @@ class MobFot:
         pattern = re.compile(r"(20\d{2})(\d{2})(\d{2})")
         return pattern.match(date)
 
+    def _check_season(self, season: str) -> Union[re.Match, None]:
+        """Makes sure the season is formatted correctly 20WX-20YZ
+
+        Args:
+            season (str): The season (20WX/20YZ)
+
+        Returns:
+            Union[re.Match, None]:
+        """
+        pattern = re.compile(r"(20\d{2})/(20\d{2})")
+        return pattern.match(season)
+
     def _execute_query(self, url: str) -> dict:
         """Executes a single query against the API
 
@@ -92,6 +104,7 @@ class MobFot:
         tab: str = "overview",
         type: str = "league",
         time_zone: str = "America/New_York",
+        season: str = "",
     ) -> dict:
         """Gets information about a given league
 
@@ -100,12 +113,14 @@ class MobFot:
             tab (str, optional): What tab of information to get. Defaults to "overview".
             type (str, optional): Defaults to "league".
             time_zone (str, optional): The time zone. Defaults to "America/New_York".
-
+            season (str, optional): The season we want, the format must be `20WX/20YZ`. Defaults to "" (it will show current season)
         Returns:
             dict: The response from the API
         """
-        url = f"{self.leagues_url}id={id}&tab={tab}&type={type}&timezone={time_zone}"
-        return self._execute_query(url)
+        if season == "" or self._check_season(season) is not None:
+            url = f"{self.leagues_url}id={id}&tab={tab}&type={type}&timezone={time_zone}&season={season}"
+            return self._execute_query(url)
+        return {}
 
     def get_team(
         self,

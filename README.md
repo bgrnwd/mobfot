@@ -37,7 +37,6 @@ client.get_matches_by_date("20221205")
 ## Contributing
 
 - Feel free to [open an issue](https://github.com/bgrnwd/mobfot/issues/new) or submit a pull request.
-- If you decide to contribute check the linting with: `black --line-length 88 .`
 
 ## License
 

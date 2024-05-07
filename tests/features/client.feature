@@ -72,4 +72,3 @@ Feature: Client usage
     Given there is a MobFot client
     When the "search" function is called with parameters "neymar"
     Then there is a response
-  

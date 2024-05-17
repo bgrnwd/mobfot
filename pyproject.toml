@@ -61,6 +61,7 @@ legacy_tox_ini = """
     env_list =
         lint
         type
+        test
 
     [testenv]
     deps = behave

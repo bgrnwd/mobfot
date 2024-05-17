@@ -1,0 +1,18 @@
+name: ❓ General Question
+description: Submit a question
+title: "[QUESTION] <title>"
+labels: [question]
+body:
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for your question.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: textarea
+    attributes:
+      label: Question
+      description: Your question and any relevant information
+    validations:
+      required: true

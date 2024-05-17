@@ -53,3 +53,29 @@ version = { attr = "mobfot.client.VERSION" }
 [[tool.mypy.overrides]]
 module = "cachecontrol.*"
 ignore_missing_imports = true
+
+[tool.tox]
+legacy_tox_ini = """
+    [tox]
+    min_version = 4.0
+    env_list =
+        lint
+        type
+        test
+
+    [testenv]
+    deps = behave
+    commands = behave tests/features
+
+    [testenv:type]
+    deps = 
+      mypy
+      types-requests
+    commands = mypy mobfot
+
+    [testenv:lint]
+    deps = ruff
+    commands =
+      ruff check mobfot
+      ruff format mobfot
+"""

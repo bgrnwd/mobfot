@@ -53,6 +53,15 @@ Feature: Client usage
     When the "_check_date" function is called with the following date "2022-12-05"
     Then the function returns None
 
+  Scenario: Valid date format for the _check_season function
+    Given there is a MobFot client
+    When the "_check_season" function is called with the following date "2021/2022"
+    Then the function returns a Match
+
+  Scenario: Invalid date format for the _check_season function
+    Given there is a MobFot client
+    When the "_check_season" function is called with the following date "2021-2022"
+    Then the function returns None
 
   Scenario: get_match_tv_listing
     Given there is a MobFot client
@@ -68,4 +77,3 @@ Feature: Client usage
     Given there is a MobFot client
     When the "search" function is called with parameters "neymar"
     Then there is a response
-  

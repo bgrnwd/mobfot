@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mobfot"
-description = "A Python wrapper around the unofficial FotMob API"
+description = "An unofficial Python client for the FotMob API"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.7"
@@ -25,7 +25,7 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-dependencies = ["requests~=2.31.0", "CacheControl>=0.13.1,<0.15.0"]
+dependencies = ["requests>=2.31.0", "CacheControl>=0.13.1"]
 dynamic = ["version"]
 
 [project.optional-dependencies]
@@ -41,7 +41,7 @@ test = [
 ]
 
 [project.urls]
-homepage = "https://github.com/bgrnwd/mobfot"
+homepage = "https://bgrnwd.com/mobfot/"
 repository = "https://github.com/bgrnwd/mobfot"
 
 [tool.ruff]

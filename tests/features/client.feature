@@ -18,6 +18,11 @@ Feature: Client usage
     When the "get_matches_by_date" function is called with parameters "20221205"
     Then there is a response
 
+  Scenario: get_matches_by_league
+    Given there is a MobFot client
+    When the "get_matches_by_league" function is called with parameters "130"
+    Then there is a response
+
   Scenario: get_league
     Given there is a MobFot client
     When the "get_league" function is called with parameters "130"

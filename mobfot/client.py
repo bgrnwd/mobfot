@@ -6,7 +6,7 @@ from typing import Optional, Union
 import requests
 from cachecontrol import CacheControl
 
-VERSION = "1.2.0"
+VERSION = "1.4.0"
 
 
 class MobFot:
@@ -85,6 +85,17 @@ class MobFot:
             url = f"{self.matches_url}date={date}&timezone={time_zone}"
             return self._execute_query(url)
         return {}
+
+    def get_matches_by_league(self, id: int) -> dict:
+        """Gets matches for a given league
+
+        Args:
+            id (int): The league ID
+
+        Returns:
+            dict: Matches for a specified league
+        """
+        return self.get_league(id=id)["matches"]
 
     def get_league(
         self,

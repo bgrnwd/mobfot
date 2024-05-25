@@ -23,7 +23,7 @@ def attribute(context, attr_name, value):
 
 @when('the "{func_name}" function is called with parameters "{params}"')
 def function_call(context, func_name, params):
-    cwd = Path.cwd()
+    cwd = Path(__file__).parent.parent.parent
 
     if func_name == "get_league":
         file = Path(cwd, "./mocks/league.json")
